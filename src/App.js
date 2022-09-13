@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+//import Footer from "./Components/Footer/Footer";
+import { useState } from "react";
+import Formulario from "./Components/Formulario/Formulario";
+import Header from "./Components/Header/Header";
+import Showapi from "./Components/Showapi/Showapi";
 
 function App() {
+     const [nombreaBuscar, setNombreaBuscar] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className="container">
+     <Header />
+     <Formulario setNombreaBuscar={setNombreaBuscar}/>
+     <Showapi nombreaBuscar={nombreaBuscar}/>
+   </div>
   );
 }
 
